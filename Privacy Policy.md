@@ -1,62 +1,80 @@
-# Statement
+# 🛡️ Privacy Policy for Fira
 
-We respect the privacy of your information. We provide this explanation about our information practices as a show of our commitment to protect your privacy. This policy describes the types of information we m3ay collect from you or that you may provide when using Thunder Security or servers where Thunder Security is present and our practices for collecting, using, maintaining, protecting, and disclosing that information.
+Welcome to the **Fira** Privacy Policy. We value your privacy and believe in full transparency regarding how your data is handled. By inviting Fira to your Discord server or utilizing its features, you consent to the data practices described below.
 
-Please read this policy carefully to understand our policies and practices regarding your information and how we treat it. If you do not agree with our policies and practices, your choice is not to use our website or bot. By adding 
-to your Discord server, you agree that you have read and agree to this policy.
+> [!NOTE]  
+> **Quick Summary:** Fira only collects data necessary for its features to work properly. **We do not sell, rent, or share your data with third parties.** 
 
-# What does it store?
+---
 
-Server IDs for server data (prefixes, settings, autorole, welcome, logging, vcrole, antinuke).
+## 📊 1. Data We Collect & Store
 
-User IDs to keep a record of afk, warn, mute.
+To provide you with the best music and bot experience, Fira uses a secure local database. Here is exactly what we store:
 
-Few parts of message content for logging system.
+### 👤 User Information
+| Type of Data | What it is | Why we need it |
+| --- | --- | --- |
+| **Discord IDs** | Your unique Discord identifier. | To link your profile, settings, and permissions to you. |
+| **Social Profiles** | Badges, bio, friends list, and marriage status. | To display your custom bot profile using our commands. |
+| **Settings** | Music platform preference (e.g., YouTube Music). | To tailor your music searching experience. |
+| **Last.fm Data** | Username, avatar, display name, and play counts. | To fetch and display your listening stats via the Last.fm integration. |
 
-Our bot only gathers personally identifiable data through commands run using the bot. This information helps us provide a better user experience for all Thunder Security users.
+### 🏘️ Server (Guild) Information
+| Type of Data | What it is | Why we need it |
+| --- | --- | --- |
+| **Discord IDs** | The unique ID of the server. | To store configuration specifically for your community. |
+| **Configurations** | Custom prefixes, voice roles, ignored channels. | To allow server admins to customize how the bot operates. |
+| **Setup Data** | Channel IDs and Message IDs for 24/7 or Music Request panels. | To keep automation and music request features active and functioning. |
 
-The information we collect when you vote for Zestar on the third-party website Discord bot list
+### 🎵 Music & Playlists
+| Type of Data | What it is | Why we need it |
+| --- | --- | --- |
+| **Custom Playlists** | Playlist names, saved track URIs, durations, and titles. | To allow you to save and instantly load your favorite songs. |
+| **Permissions** | User IDs of members you invite to edit your playlists. | To allow collaborative playlist management. |
 
-Your Username
+### 🛑 Moderation & Security
+| Type of Data | What it is | Why we need it |
+| --- | --- | --- |
+| **Blacklists** | User or Server IDs that are banned from using the bot. | To protect the bot from abuse. |
+| **Access Control** | No-prefix access data and specific rank permissions. | To grant premium or administrative access to authorized users. |
 
-Date and time when the votes counted.
+---
 
-We store this data on MongoDB private cluster and it will delete if you are not using our bot for the future.
+## ⚙️ 2. How Your Data is Used
 
-What logs bot will send into your server?
+> [!IMPORTANT]  
+> **Your data stays with Fira.** We strictly use your data to power the bot's functionality. 
 
-The bot will send the deleted messages in the selected log channel.
+- **Executing Commands:** Remembering your setup configurations so you don't have to input them every time.
+- **Automation:** Assigning voice roles or automatically connecting to 24/7 voice channels based on your saved server settings.
+- **Integrations:** Only communicating with verified third-party APIs (like Last.fm or Lavalink) directly related to commands you intentionally trigger.
 
-The bot will send the message content which is changed by any users in the selected log channel.
+---
 
-# Note: These are very sensitive for every user's privacy so we recommend to admins that take the log channels as private or mod only.
+## ⏳ 3. Data Retention
 
-# Who can access the data?
+Data is kept in Fira's database as long as it remains relevant to the bot's operations. 
 
-Following people can access ALL of the data:
+- **Active Data:** Profiles, settings, and playlists are retained indefinitely while you use the bot.
+- **Temporary Data:** Time-limited no-prefix access or blacklists are automatically invalidated upon expiration.
+- **Orphaned Data:** If Fira is removed from a server, server-specific configurations remain dormant. 
 
-Bot developer(s)
+---
 
-Following people can access message content :
+## 🗑️ 4. Your Rights (Data Deletion)
 
-Server Moderator(s), Everyone (If server moderators opt to log it in a public channel)
+You have full control over your footprint. If you wish to have your data erased:
 
-Following people can access message content :
+1. **Server Data:** Server administrators can remove the bot, and manually clear channel configurations by deleting the associated channels.
+2. **Personal Data Wipes:** If you want your user profile, Last.fm connections, and custom playlists entirely wiped from our systems, please contact the developer team.
 
-Bot developer(s)
+> [!WARNING]  
+> Once a developer manually deletes your profile data upon request, it is **permanently lost** and cannot be recovered.
 
-# How can I get rid of the data stored?
+---
 
-To remove the server id or user id stored in our database do one of the following:
+## 📬 5. Contact & Support
 
-Contact any of the server moderators in our discord support server.
+If you have any questions about this Privacy Policy, your stored data, or if you'd like to submit a data deletion request, please reach out to the bot developers through our support channels.
 
-Ask server mod(s) to remove the logged message or just wait for 24 hours, after being they are removed automatically after 24 hours.
-
-# Security
-
-We take steps to ensure data provided from Thunder Security is protected from misuse, loss, alteration, or unauthorized access. However, no Internet-based system can be declared fully secure and error free. 
-
-# HOW CAN I CONTACT YOU?
-
-If you have specific questions about our privacy policy you can send us an Email and you can simply join our discord support server
+*Last Updated: May 2026*

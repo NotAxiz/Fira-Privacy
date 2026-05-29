@@ -13,14 +13,14 @@ To give you an idea of your responsibilities versus our responsibilities, here i
 
 ```mermaid
 graph TD
-    User([You / Server Admin]) -->|Sends Command| Fira{Fira Bot}
-    User -->|Provides Audio Queries| Fira
+    User(["You / Server Admin"]) -->|"Sends Command"| Fira{"Fira Bot"}
+    User -->|"Provides Audio Queries"| Fira
     
-    Fira -->|Fetches Audio Stream| Lavalink[Lavalink Nodes / YT Music]
-    Fira -->|Stores Configurations| Database[(Local SQLite DB)]
+    Fira -->|"Fetches Audio Stream"| Lavalink["Lavalink Nodes / YT Music"]
+    Fira -->|"Stores Configurations"| Database[("Local SQLite DB")]
     
-    Lavalink -->|Returns Audio| DiscordVC((Discord Voice Channel))
-    Database -->|Loads Profiles & Settings| Fira
+    Lavalink -->|"Returns Audio"| DiscordVC(("Discord Voice Channel"))
+    Database -->|"Loads Profiles & Settings"| Fira
     
     style User fill:#5865F2,stroke:#fff,stroke-width:2px,color:#fff
     style Fira fill:#EB459E,stroke:#fff,stroke-width:2px,color:#fff
@@ -52,12 +52,12 @@ We take the stability of Fira very seriously. If our automated systems or develo
 
 ```mermaid
 flowchart LR
-    Violation[Rule Violation Detected] --> Check{Severity}
-    Check -->|Minor Spam| Warning[Temporary Cooldown / Warning]
-    Check -->|Exploitation / Severe Abuse| Blacklist[Permanent Blacklist Added to DB]
+    Violation["Rule Violation Detected"] --> Check{"Severity"}
+    Check -->|"Minor Spam"| Warning["Temporary Cooldown / Warning"]
+    Check -->|"Exploitation / Severe Abuse"| Blacklist["Permanent Blacklist Added to DB"]
     
-    Blacklist --> UserBan(User Blacklist: You cannot use Fira anywhere)
-    Blacklist --> GuildBan(Guild Blacklist: Fira leaves your server)
+    Blacklist --> UserBan("User Blacklist: You cannot use Fira anywhere")
+    Blacklist --> GuildBan("Guild Blacklist: Fira leaves your server")
     
     style Violation fill:#fee2e2,stroke:#b91c1c,color:#000
     style Blacklist fill:#1f2937,stroke:#ef4444,color:#fff

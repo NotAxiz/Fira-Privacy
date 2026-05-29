@@ -7,6 +7,31 @@ Welcome to the **Fira** Privacy Policy. We value your privacy and believe in ful
 
 ---
 
+## 🗄️ Data Flow & Storage (Visualized)
+
+To help you understand exactly where your data goes, here is a visual representation of Fira's data lifecycle:
+
+```mermaid
+flowchart TD
+    User(["Discord User / Admin"]) -->|"Inputs Commands & Profiles"| Bot{"Fira Bot"}
+    
+    Bot -->|"Stores Data Locally"| DB[("Local Secure Database")]
+    DB -.->|"Loads Settings on Command"| Bot
+    
+    Bot -->|"Optional Integration"| LastFM["Last.fm API"]
+    Bot -.->|"❌ STRICTLY PROHIBITED"| ThirdParties["Advertisers / Data Brokers"]
+    
+    style User fill:#5865F2,stroke:#fff,stroke-width:2px,color:#fff
+    style Bot fill:#EB459E,stroke:#fff,stroke-width:2px,color:#fff
+    style DB fill:#FEE75C,stroke:#000,stroke-width:2px,color:#000
+    style ThirdParties fill:#ED4245,stroke:#fff,stroke-width:2px,color:#fff
+```
+
+> [!IMPORTANT]  
+> As shown above, your data **never** leaves the bot's ecosystem unless you are explicitly using an integration like Last.fm. 
+
+---
+
 ## 📊 1. Data We Collect & Store
 
 To provide you with the best music and bot experience, Fira uses a secure local database. Here is exactly what we store:
@@ -42,7 +67,7 @@ To provide you with the best music and bot experience, Fira uses a secure local 
 
 ## ⚙️ 2. How Your Data is Used
 
-> [!IMPORTANT]  
+> [!TIP]  
 > **Your data stays with Fira.** We strictly use your data to power the bot's functionality. 
 
 - **Executing Commands:** Remembering your setup configurations so you don't have to input them every time.
@@ -51,9 +76,25 @@ To provide you with the best music and bot experience, Fira uses a secure local 
 
 ---
 
-## ⏳ 3. Data Retention
+## ⏳ 3. Data Retention Lifecycle
 
-Data is kept in Fira's database as long as it remains relevant to the bot's operations. 
+Data is kept in Fira's database as long as it remains relevant to the bot's operations. Here is how we treat different types of data over time:
+
+```mermaid
+flowchart LR
+    Data["User / Server Data"] --> Type{"Data Type"}
+    
+    Type -->|"Profiles & Playlists"| Perm["Retained Indefinitely"]
+    Type -->|"Temp Blacklists / Access"| Temp["Has Expiration Date"]
+    Type -->|"Server Configs"| Dormant["Kept Dormant if Bot Kicked"]
+    
+    Temp -->|"Timer Reaches 0"| AutoDelete(("Auto-Deleted by Bot"))
+    Perm -->|"User Requests Wipe"| Wipe(("Permanently Wiped"))
+    
+    style Data fill:#5865F2,stroke:#fff,color:#fff
+    style AutoDelete fill:#10B981,stroke:#fff,color:#fff
+    style Wipe fill:#EF4444,stroke:#fff,color:#fff
+```
 
 - **Active Data:** Profiles, settings, and playlists are retained indefinitely while you use the bot.
 - **Temporary Data:** Time-limited no-prefix access or blacklists are automatically invalidated upon expiration.
@@ -61,12 +102,26 @@ Data is kept in Fira's database as long as it remains relevant to the bot's oper
 
 ---
 
-## 🗑️ 4. Your Rights (Data Deletion)
+## 🗑️ 4. Your Rights (Data Deletion Process)
 
-You have full control over your footprint. If you wish to have your data erased:
+You have full control over your digital footprint. If you wish to have your data erased, the process is straightforward:
+
+```mermaid
+flowchart TD
+    Start(["You Want Data Deleted"]) --> Step1["Leave Support Server & Kick Bot"]
+    Step1 --> Step2["Contact Developer Team"]
+    
+    Step2 --> Action{"Developer Action"}
+    Action -->|"Verifies ID"| Delete["Runs Database Wipe Command"]
+    
+    Delete --> End(("Data Permanently Erased"))
+    
+    style Start fill:#F59E0B,stroke:#fff,color:#fff
+    style End fill:#EF4444,stroke:#fff,color:#fff
+```
 
 1. **Server Data:** Server administrators can remove the bot, and manually clear channel configurations by deleting the associated channels.
-2. **Personal Data Wipes:** If you want your user profile, Last.fm connections, and custom playlists entirely wiped from our systems, please contact the developer team.
+2. **Personal Data Wipes:** If you want your user profile, Last.fm connections, and custom playlists entirely wiped from our systems, please contact the developer team to execute the wipe.
 
 > [!WARNING]  
 > Once a developer manually deletes your profile data upon request, it is **permanently lost** and cannot be recovered.
